@@ -23,8 +23,8 @@ krkr嵌入CEF插件
    win.width = 1280;
    win.height = 720;
    win.visible = true;
-   win.caption = "我们不用很苦很累就能在krkr上运行minecraft";
-   System.title = "我们不用很苦很累就能在krkr上运行minecraft";
+   win.caption = "Sora";
+   System.title = "Sora";
    Plugins.link("krcef.dll");
    /*
        初始化浏览器
@@ -42,7 +42,7 @@ krkr嵌入CEF插件
        // 把浏览器窗口拉到最顶端
        krCEF.toTop();
        // 加载url
-       krCEF.loadUrl("http://mc.missthee.com/dist/index.html");
+       krCEF.loadUrl("http://sorapray.com");
        // 关闭浏览器
        // krCEF.close();
    };
