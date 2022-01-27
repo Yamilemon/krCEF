@@ -7,9 +7,9 @@ krkr嵌入CEF插件
 2. 在环境变量中配置CEF_HOME指向下载下来的cef的解压目录。
 3. 安装cmake（3.18以上版本）用cmake-gui构建libcef_dll_wrapper.lib的工程：https://blog.csdn.net/csdnyonghu123/article/details/87982333 这一步实在不行的话，可以试试在这里下载我编译好的libcef_dll_wrapper.lib静态库（/MT x86 32位）：https://pan.baidu.com/s/1SfDfmuCLYVopeysTw5HBhg 提取码：sora
 4. 链接器里配置libcef_dll_wrapper.lib和libcef.lib静态库的目录（工程里已配置，但是可能路径不太对，需要重新调整一下）
-5. 打开krcef.sln，解决方案中引用第三步中生成的libcef_dll_wrapper和ZERO_CHECK两个项目。
+5. 打开krcef.sln，解决方案中引用第三步中生成的libcef_dll_wrapper和ZERO_CHECK两个项目。（可选，如果上面cmake配置过不了这步可以跳过）
 4. 生成后事件的中配置cefsimple.exe.manifest的目录还有输出这个dll的目录，其实就是第一行那个mt命令行的地方，那里要往dll里写入一个清单文件，不然打开网页会白屏，这里根据实际输出目录进行配置就好。
-4. 生成解决方案，编译完成。
+4. 选择win32 Release生成解决方案，编译完成。
 
 ## 运行方式：
 
