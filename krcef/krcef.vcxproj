@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a1908b15-9f12-4ca9-bd91-9f6801cb1d47}</ProjectGuid>
+    <RootNamespace>krcef</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>./ncbind;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(CEF_HOME);.\ncbind;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CEF_HOME)\Release\libcef.lib;$(CEF_HOME)\build\Release\libcef_dll_wrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>setlocal
+mt.exe -nologo -manifest "C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/tests/cefsimple/cefsimple.exe.manifest" "C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/tests/cefsimple/compatibility.manifest" -outputresource:"C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/Release/krcef.dll";#1
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Release/chrome_elf.dll C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/chrome_elf.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Release/libcef.dll C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/libcef.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Release/libEGL.dll C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/libEGL.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Release/libGLESv2.dll C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/libGLESv2.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Release/snapshot_blob.bin C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/snapshot_blob.bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Release/v8_context_snapshot.bin C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/v8_context_snapshot.bin
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Release/vk_swiftshader.dll C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/vk_swiftshader.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Release/vk_swiftshader_icd.json C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/vk_swiftshader_icd.json
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Release/vulkan-1.dll C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/vulkan-1.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_directory C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Release/swiftshader C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/swiftshader
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Release/d3dcompiler_47.dll C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/d3dcompiler_47.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Resources/chrome_100_percent.pak C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/chrome_100_percent.pak
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Resources/chrome_200_percent.pak C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/chrome_200_percent.pak
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Resources/resources.pak C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/resources.pak
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_if_different C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Resources/icudtl.dat C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/icudtl.dat
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\Users\Sora\Desktop\cmake-3.20.0-rc2-windows-x86_64\bin\cmake.exe -E copy_directory C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/Resources/locales C:/Users/Sora/Desktop/cef_binary_96.0.16+g89c902b+chromium-96.0.4664.55_windows32/build/tests/cefsimple/Release/locales
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>add manifest</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="cef\simple_app.cc" />
+    <ClCompile Include="cef\simple_handler.cc" />
+    <ClCompile Include="cef\simple_handler_win.cc" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ncbind\ncbind.cpp" />
+    <ClCompile Include="tp_stub.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cef\simple_app.h" />
+    <ClInclude Include="cef\simple_handler.h" />
+    <ClInclude Include="ncbind\ncbind.hpp" />
+    <ClInclude Include="tp_stub.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\libcef_dll_wrapper\libcef_dll_wrapper.vcxproj">
+      <Project>{c5050572-470d-368f-9ecc-c21dc5cc4c60}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\ZERO_CHECK.vcxproj">
+      <Project>{015ca9bf-f7ce-3ba3-ac94-f6113b16258f}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

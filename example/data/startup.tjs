@@ -1,0 +1,28 @@
+System.inform("I am shadow of Sora.");
+var win = new Window();
+win.width = 1280;
+win.height = 720;
+win.visible = true;
+win.caption = "我们不用很苦很累就能在krkr上运行minecraft";
+System.title = "我们不用很苦很累就能在krkr上运行minecraft";
+Plugins.link("krcef.dll");
+/*
+    初始化浏览器
+    @param1：命令行参数
+    @param2：是否把浏览器窗口拉到最顶端（默认在最底端）
+    @param3：初始网址
+    @param4：left
+    @param5：top
+    @param6：width
+    @param7：height
+*/
+krCEF.init(void, false, "https://www.baidu.com", 0, 0, 1280, 720);
+// 浏览器初始化完成回调
+krCEF.onFinish = function(){
+    // 把浏览器窗口拉到最顶端
+    krCEF.toTop();
+    // 加载url
+    krCEF.loadUrl("http://mc.missthee.com/dist/index.html");
+    // 关闭浏览器
+    // krCEF.close();
+};
