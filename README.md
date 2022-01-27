@@ -49,3 +49,6 @@ krkr嵌入CEF插件
    ```
 
    运行krkr，即可看到对应的网页调用效果
+
+![https://github.com/Yamilemon/krCEF/example.png]()
+
